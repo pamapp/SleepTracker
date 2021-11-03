@@ -1,55 +1,73 @@
 //
-//  Persistence.swift
+//  DataController.swift
 //  dreams
 //
 //  Created by Alina Potapova on 20.10.2021.
 //
 
+import Foundation
+import SwiftUI
 import CoreData
 
-struct PersistenceController {
-    static let shared = PersistenceController()
-
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Dream(context: viewContext)
-            newItem.timestamp = Date()
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
-
-    let container: NSPersistentContainer
-
+class DataController: ObservableObject {
+    private let container: NSPersistentContainer
+    
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "dreams")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 
-                /*
-                Typical reasons for an error here include:
-                * The parent directory does not exist, cannot be created, or disallows writing.
-                * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                * The device is out of space.
-                * The store could not be migrated to the current model version.
-                Check the error message to determine what the actual problem was.
-                */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+        if inMemory {
+            container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        }
+
+        container.loadPersistentStores { storeDescription, error in
+            if let error = error as NSError? {
+                fatalError("Fatal error while loading data: \(error.localizedDescription)")
             }
-        })
+        }
+    }
+    
+    var context: NSManagedObjectContext {
+        container.viewContext
+    }
+    
+    func save() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // TODO: Display an error alert to the user and send a log crash to me
+                fatalError("Fatal error while saving changes: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func delete(_ object: NSManagedObject) {
+        context.delete(object)
+    }
+    
+    func deleteAllNotes() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Dream")
+        let batchRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try context.executeAndMergeChanges(using: batchRequest)
+        } catch {
+            fatalError("Fatal error while deleting folder: \(error.localizedDescription)")
+        }
+    }
+}
+
+extension NSManagedObjectContext {
+//     Executes the given `NSBatchDeleteRequest` and directly merges the changes to bring the given
+//     managed object context up to date.
+//
+//     - Parameter batchDeleteRequest: The `NSBatchDeleteRequest` to execute.
+//     - Throws: An error if anything went wrong executing the batch deletion.
+    
+    public func executeAndMergeChanges(using batchDeleteRequest: NSBatchDeleteRequest) throws {
+        batchDeleteRequest.resultType = .resultTypeObjectIDs
+        let result = try execute(batchDeleteRequest) as? NSBatchDeleteResult
+        let changes: [AnyHashable: Any] = [NSDeletedObjectsKey: result?.result as?
+                                           [NSManagedObjectID] ?? []]
+        NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [self])
     }
 }

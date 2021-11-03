@@ -7,22 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912340E12722ACD1000DD8C3 /* DreamsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912340E02722ACD1000DD8C3 /* DreamsPage.swift */; };
+		912340E427231BFC000DD8C3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912340E327231BFC000DD8C3 /* TabBarView.swift */; };
+		9194E35227206D2B006DDF3B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194E35127206D2B006DDF3B /* Color+Extension.swift */; };
+		919790FF272DDE3000530276 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919790FE272DDE3000530276 /* StatsView.swift */; };
 		919BE0022720561F00800A86 /* dreamsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919BE0012720561F00800A86 /* dreamsApp.swift */; };
 		919BE0042720561F00800A86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919BE0032720561F00800A86 /* ContentView.swift */; };
 		919BE0062720562300800A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 919BE0052720562300800A86 /* Assets.xcassets */; };
 		919BE0092720562300800A86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 919BE0082720562300800A86 /* Preview Assets.xcassets */; };
-		919BE00B2720562300800A86 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919BE00A2720562300800A86 /* Persistence.swift */; };
+		919BE00B2720562300800A86 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919BE00A2720562300800A86 /* DataController.swift */; };
 		919BE00E2720562300800A86 /* dreams.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 919BE00C2720562300800A86 /* dreams.xcdatamodeld */; };
+		919BE0152720577700800A86 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919BE0142720577700800A86 /* Dream.swift */; };
+		91BE97542732C6B1002FA5E5 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE97532732C6B1002FA5E5 /* TableView.swift */; };
+		91E1631B272EE0F700DE5644 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1631A272EE0F700DE5644 /* Font+Extensions.swift */; };
+		91E1631D272EEB3200DE5644 /* CustomNightBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1631C272EEB3200DE5644 /* CustomNightBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		912340E02722ACD1000DD8C3 /* DreamsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamsPage.swift; sourceTree = "<group>"; };
+		912340E327231BFC000DD8C3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		9194E35127206D2B006DDF3B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		919790FE272DDE3000530276 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		919BDFFE2720561F00800A86 /* dreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		919BE0012720561F00800A86 /* dreamsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dreamsApp.swift; sourceTree = "<group>"; };
 		919BE0032720561F00800A86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		919BE0052720562300800A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		919BE0082720562300800A86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		919BE00A2720562300800A86 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		919BE00A2720562300800A86 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		919BE00D2720562300800A86 /* dreams.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dreams.xcdatamodel; sourceTree = "<group>"; };
+		919BE0142720577700800A86 /* Dream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
+		91BE97532732C6B1002FA5E5 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		91E1631A272EE0F700DE5644 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
+		91E1631C272EEB3200DE5644 /* CustomNightBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNightBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +52,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		912340E22722ACD6000DD8C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91BE97552732C6C9002FA5E5 /* BackgroundView */,
+				912340E02722ACD1000DD8C3 /* DreamsPage.swift */,
+				912340E327231BFC000DD8C3 /* TabBarView.swift */,
+				919790FE272DDE3000530276 /* StatsView.swift */,
+				91BE97532732C6B1002FA5E5 /* TableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9194E35327206D3D006DDF3B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9194E35127206D2B006DDF3B /* Color+Extension.swift */,
+				91E1631A272EE0F700DE5644 /* Font+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		919BDFF52720561E00800A86 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +93,12 @@
 			isa = PBXGroup;
 			children = (
 				919BE0012720561F00800A86 /* dreamsApp.swift */,
+				919BE00A2720562300800A86 /* DataController.swift */,
 				919BE0032720561F00800A86 /* ContentView.swift */,
+				919BE0162720579200800A86 /* Modules */,
+				9194E35327206D3D006DDF3B /* Extensions */,
+				912340E22722ACD6000DD8C3 /* Views */,
 				919BE0052720562300800A86 /* Assets.xcassets */,
-				919BE00A2720562300800A86 /* Persistence.swift */,
 				919BE00C2720562300800A86 /* dreams.xcdatamodeld */,
 				919BE0072720562300800A86 /* Preview Content */,
 			);
@@ -71,6 +111,22 @@
 				919BE0082720562300800A86 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		919BE0162720579200800A86 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				919BE0142720577700800A86 /* Dream.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		91BE97552732C6C9002FA5E5 /* BackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+				91E1631C272EEB3200DE5644 /* CustomNightBackground.swift */,
+			);
+			path = BackgroundView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +199,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				919BE00B2720562300800A86 /* Persistence.swift in Sources */,
+				912340E12722ACD1000DD8C3 /* DreamsPage.swift in Sources */,
+				91BE97542732C6B1002FA5E5 /* TableView.swift in Sources */,
+				919BE00B2720562300800A86 /* DataController.swift in Sources */,
+				91E1631B272EE0F700DE5644 /* Font+Extensions.swift in Sources */,
+				912340E427231BFC000DD8C3 /* TabBarView.swift in Sources */,
+				9194E35227206D2B006DDF3B /* Color+Extension.swift in Sources */,
+				91E1631D272EEB3200DE5644 /* CustomNightBackground.swift in Sources */,
 				919BE0042720561F00800A86 /* ContentView.swift in Sources */,
 				919BE0022720561F00800A86 /* dreamsApp.swift in Sources */,
+				919BE0152720577700800A86 /* Dream.swift in Sources */,
 				919BE00E2720562300800A86 /* dreams.xcdatamodeld in Sources */,
+				919790FF272DDE3000530276 /* StatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

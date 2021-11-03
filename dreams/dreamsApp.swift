@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct dreamsApp: App {
-    let persistenceController = PersistenceController.shared
-
+    @StateObject private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .preferredColorScheme(.dark)
+                .environmentObject(dataController)
         }
     }
 }
